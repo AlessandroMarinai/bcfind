@@ -1420,9 +1420,9 @@ def main():
         trainer.run(args.config, args.only_dog, args.val_from_test, args.lmdb, args.gpu, args.checkpoint_model)
         #trainer.get_oracle_f1_gamma(args.config, args.val_from_test, args.gpu, args.test_on_target)
     else:
-        #trainer.test(args.config, args.val_from_test, args.gpu, args.test_on_target)
+        trainer.test(args.config, args.val_from_test, args.gpu, args.test_on_target)
         #trainer.test(args.config, args.val_from_test, args.gpu, args.test_on_target, args.slice)
-        trainer.test_gamma_target(args.config, args.val_from_test, args.gpu, args.test_on_target)
+        #trainer.test_gamma_target(args.config, args.val_from_test, args.gpu, args.test_on_target)
         #trainer.get_oracle_f1_gamma(args.config, args.val_from_test, args.gpu, args.test_on_target)
 
 
