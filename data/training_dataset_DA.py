@@ -48,6 +48,7 @@ class TrainingDataset_DA(tf.keras.utils.Sequence):
         logger.info(f"loading {tiff_path}")
         input_image = get_input_tf(tiff_path, **preprocess_kwargs)
 
+
         logger.info(f"creating blobs from {marker_path}")
         blobs = get_target_tf(marker_path, tf.shape(input_image), dim_resolution) #TODO set default radius
 
@@ -60,6 +61,8 @@ class TrainingDataset_DA(tf.keras.utils.Sequence):
     @tf.function
     def parse_imgs_target(tiff_path, preprocess_kwargs):
         logger.info(f"loading {tiff_path}")
+
+
         input_image = get_input_tf(tiff_path, **preprocess_kwargs)
         input_image = tf.expand_dims(input_image, 0)
         return tf.ensure_shape(input_image, (1, None, None, None))
@@ -70,16 +73,19 @@ class TrainingDataset_DA(tf.keras.utils.Sequence):
         marker_list,
         tiff_list_target,
         batch_size,
+        preprocess_kwargs,
+        preprocess_kwargs_target,
         dim_resolution=1.0,
         output_shape=None,
         augmentations=None,
         augmentations_prob=0.5,
         use_lmdb_data=False,
         n_workers=10,
-        **preprocess_kwargs,
+
     ):
         
-        #TODO something is not working from the beginning of the map function
+        print(preprocess_kwargs)
+        print(preprocess_kwargs_target)
         if not use_lmdb_data:
             # with tf.device('/cpu:0'):
             data = tf.data.Dataset.from_tensor_slices((tiff_list, marker_list))
@@ -91,9 +97,12 @@ class TrainingDataset_DA(tf.keras.utils.Sequence):
                 num_parallel_calls=tf.data.AUTOTUNE,
                 deterministic=False,
             )
+            print(data)
 
             # cache data after time consuming map and make it shuffle every epoch
+
             data = data.cache().shuffle(len(marker_list), reshuffle_each_iteration=True)
+            print(data)
 
             # random crop inputs and targets
             if output_shape is not None:
@@ -102,6 +111,7 @@ class TrainingDataset_DA(tf.keras.utils.Sequence):
                     num_parallel_calls=tf.data.AUTOTUNE,
                     deterministic=False,
                 )
+            print(data)
 
             # do augmentations
             if augmentations is not None:
@@ -130,7 +140,7 @@ class TrainingDataset_DA(tf.keras.utils.Sequence):
              # load images and targets from paths
 
             target_domain_data = target_domain_data.map(
-                lambda x: cls.parse_imgs_target(x, preprocess_kwargs),
+                lambda x: cls.parse_imgs_target(x, preprocess_kwargs_target),
                 num_parallel_calls=tf.data.AUTOTUNE,
                 deterministic=False,
             )

@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from layers import ResBlock, ResidualEncoderBlock, ResidualDecoderBlock, GradientReversalLayer
+from layers import ResBlock, ResidualEncoderBlock, ResidualDecoderBlock, GradientReversalLayer, DecoderBlock
 
 
 class ResUNet_DA(tf.keras.Model):
@@ -145,11 +145,19 @@ class ResUNet_DA(tf.keras.Model):
 
         self.domain_classifier = tf.keras.Sequential([
             GradientReversalLayer(self.lambda_da, name = "gradient_reversal"),
-            tf.keras.layers.AveragePooling3D(
+            DecoderBlock(
+                n_filters=n_filters,
+                k_size=self.k_size,
+                k_stride=(1, 1, 1),
+                regularizer=None,
+                normalization="batch",
+                activation="linear",
+            ),
+            tf.keras.layers.MaxPool3D(
                 pool_size=(3, 3, 3),
                 padding='same',
             ),
-            tf.keras.layers.AveragePooling3D(
+            tf.keras.layers.MaxPool3D(
                 pool_size=(3, 3, 3),
                 padding='same',
             ),

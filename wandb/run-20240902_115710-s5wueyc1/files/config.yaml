@@ -1,0 +1,159 @@
+wandb_version: 1
+
+Source:
+  desc: null
+  value:
+    name: Broca_old
+    basepath: /home/amarinai/Data/Broca_old_l48_long
+    shape:
+    - '50'
+    - '100'
+    - '100'
+    dim_resolution:
+    - '3.6'
+    - '3.6'
+    - '3.6'
+    cell_radius:
+    - '3'
+    - '3'
+    - '3'
+Target_unlabeled:
+  desc: null
+  value:
+    name: target_unlabeled
+    basepath: /home/amarinai/Data/l45_unlabeled/I45_slice30_fused.ome.tif
+Target:
+  desc: null
+  value:
+    name: Broca_new
+    basepath: /home/amarinai/Data/Broca_I45_95crops
+    shape:
+    - '50'
+    - '100'
+    - '100'
+    dim_resolution:
+    - '3.6'
+    - '3.6'
+    - '3.6'
+    cell_radius:
+    - '3'
+    - '3'
+    - '3'
+Losses:
+  desc: null
+  value:
+    Classifier: '0.1'
+    Compiled: '1'
+Experiment:
+  desc: null
+  value:
+    name: Unet_DA_slice_domain_classifier
+    basepath: /home/amarinai/DeepLearningThesis/Results
+UNet:
+  desc: null
+  value:
+    model: res_unet_DA
+    input_shape:
+    - '48'
+    - '96'
+    - '96'
+    epochs: '2000'
+    batch_size: '10'
+    learning_rate: '0.05'
+    n_blocks: '4'
+    n_filters: '16'
+    k_size:
+    - '3'
+    - '3'
+    - '3'
+    k_stride:
+    - '2'
+    - '2'
+    - '2'
+    dropout: 'null'
+    regularizer: 'null'
+    lambda_da: '0.0'
+    squeeze_factor: '2'
+    moe_n_experts: '5'
+    moe_top_k_experts: 'null'
+    moe_noise: 'true'
+    moe_balance_loss: load
+DoG:
+  desc: null
+  value:
+    iterations: '40'
+    max_match_dist: '15'
+    n_cpu: '5'
+PreProcessing:
+  desc: null
+  value:
+    clip: bit
+    clip_value: '15'
+    center: 'null'
+    center_value: 'null'
+    scale: bit
+    scale_value: '15'
+DataAugmentation:
+  desc: null
+  value:
+    augment: 'false'
+    gamma:
+      param_range:
+      - '0.9'
+      - '1.2'
+      p: '0.4'
+    brightness:
+      param_range:
+      - '-0.1'
+      - '0.1'
+      p: '0.4'
+    zoom:
+      param_range:
+      - '1.0'
+      - '1.2'
+      order: '1'
+      p: '0.2'
+    blur:
+      param_range:
+      - '0.'
+      - '0.5'
+      p: '0.4'
+    noise:
+      param_range:
+      - '0.'
+      - '0.03'
+      p: '0.4'
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.9
+    cli_version: 0.17.0
+    framework: keras
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    start_time: 1725271035
+    t:
+      1:
+      - 2
+      - 3
+      - 5
+      - 35
+      - 53
+      - 55
+      2:
+      - 2
+      - 3
+      - 5
+      - 35
+      - 53
+      - 55
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.11.9
+      5: 0.17.0
+      8:
+      - 1
+      - 5
+      13: linux-x86_64

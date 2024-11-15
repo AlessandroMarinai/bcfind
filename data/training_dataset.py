@@ -15,9 +15,6 @@ logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
 
-# TODO probably need to add the functionality of not having a GT files and passing a list like   xs = [None] * 10
-# NB the part with lmdb is never used since lmdb is always False
-
 class TrainingDataset(tf.keras.utils.Sequence):
     """Training data flow for 3D gray images with cell locations as targets.
 
@@ -99,6 +96,7 @@ class TrainingDataset(tf.keras.utils.Sequence):
                     num_parallel_calls=tf.data.AUTOTUNE,
                     deterministic=False,
                 )
+            print(data)
 
             # add channel dimension
             data = data.map(
@@ -113,7 +111,7 @@ class TrainingDataset(tf.keras.utils.Sequence):
                 num_parallel_calls=tf.data.AUTOTUNE,
                 deterministic=False,
             )
-
+            print(data)
             return data.batch(batch_size).prefetch(tf.data.AUTOTUNE)
         else:
             return super(TrainingDataset, cls).__new__(cls)

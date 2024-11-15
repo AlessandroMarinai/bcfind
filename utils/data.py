@@ -122,7 +122,6 @@ def get_input_tf(input_file, **kwargs):
         input_file = Path(input_file.decode())
         input_image = InputFile(input_file).whole()
         input_image = input_image.astype(np.float32)
-
         # ATTN!: hard coded slice norm
         try:
             if kwargs["slice_p"] is not None:
@@ -151,7 +150,6 @@ def get_input_tf(input_file, **kwargs):
 @tf.function(reduce_retracing=True)
 def get_input_tf_slice(input_file, **kwargs):
     def get_input_wrap(input_file):
-        print("im hereeeeee")
         input_image = input_file.astype(np.float32)
 
         # ATTN!: hard coded slice norm

@@ -13,8 +13,8 @@ def predict(input, model):
             continue
         try:
             print("Input shape =", x.shape)
-            pred, _ = model(x, training=False)
-            #pred = model(x, training=False)
+            #pred, _ = model(x, training=False)
+            pred = model(x, training=False)
             break
         except (tf.errors.InvalidArgumentError, ValueError) as e:
             print("Invalid input shape for concat layer. Extracting slice")
@@ -32,6 +32,6 @@ def predict(input, model):
 
             if i == I - 1 and j == J - 1:
                 raise e
-
+    print(pred)
     pred = tf.sigmoid(tf.squeeze(pred))
     return pred

@@ -1,0 +1,15 @@
+{'clip': 'bit', 'clip_value': 14, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 14}
+{'clip': 'bit', 'clip_value': 12, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 12}
+<_ParallelMapDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+[1, None, None, None]
+(1, 48, 96, 96)
+aaa
+<_ShuffleDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+[None, None, None, None]
+(None, 48, 96, 96)
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 48, 96, 96), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 48, 96, 96), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 48, 96, 96, 1), dtype=tf.float32, name=None)>
+cis siamo
+2024-09-09 10:06:17.825550: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1012 MB memory:  -> device: 1, name: NVIDIA RTX A6000, pci bus id: 0000:ca:00.0, compute capability: 8.6
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.

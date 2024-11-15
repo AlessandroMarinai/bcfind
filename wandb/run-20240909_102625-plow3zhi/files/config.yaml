@@ -1,0 +1,157 @@
+wandb_version: 1
+
+Source:
+  desc: null
+  value:
+    name: SST_short
+    basepath: /home/amarinai/Data/SST
+    shape:
+    - '160'
+    - '480'
+    - '480'
+    dim_resolution:
+    - '2.'
+    - '.65'
+    - '.65'
+    cell_radius:
+    - '3'
+    - '9'
+    - '9'
+Target:
+  desc: null
+  value:
+    name: SST_gamma
+    basepath: /home/amarinai/Data/CFos
+    shape:
+    - '160'
+    - '480'
+    - '480'
+    dim_resolution:
+    - '2.'
+    - '.65'
+    - '.65'
+    cell_radius:
+    - '3'
+    - '9'
+    - '9'
+Experiment:
+  desc: null
+  value:
+    name: Unet_FDA
+    basepath: /home/amarinai/DeepLearningThesis/Results
+UNet:
+  desc: null
+  value:
+    model: unet
+    input_shape:
+    - '80'
+    - '120'
+    - '120'
+    epochs: '5000'
+    batch_size: '10'
+    learning_rate: '0.05'
+    n_blocks: '4'
+    n_filters: '16'
+    k_size:
+    - '3'
+    - '5'
+    - '5'
+    k_stride:
+    - '2'
+    - '2'
+    - '2'
+    dropout: 'null'
+    regularizer: 'null'
+    lambda_da: '0.0'
+    squeeze_factor: '2'
+    moe_n_experts: '5'
+    moe_top_k_experts: 'null'
+    moe_noise: 'true'
+    moe_balance_loss: load
+DoG:
+  desc: null
+  value:
+    iterations: '100'
+    max_match_dist: '10'
+    n_cpu: '5'
+PreProcessing:
+  desc: null
+  value:
+    clip: bit
+    clip_value: '15'
+    center: 'null'
+    center_value: 'null'
+    scale: bit
+    scale_value: '15'
+PreprocessingTarget:
+  desc: null
+  value:
+    clip: bit
+    clip_value: '15'
+    center: 'null'
+    center_value: 'null'
+    scale: bit
+    scale_value: '15'
+DataAugmentation:
+  desc: null
+  value:
+    augment: 'false'
+    gamma:
+      param_range:
+      - '0.9'
+      - '1.1'
+      p: '0.3'
+    brightness:
+      param_range:
+      - '-0.06'
+      - '0.06'
+      p: '0.3'
+    blur:
+      param_range:
+      - '0.'
+      - '0.3'
+      p: '0.3'
+    noise:
+      param_range:
+      - '0.'
+      - '0.03'
+      p: '0.3'
+    flip:
+      axes:
+      - '-2'
+      p: '0.3'
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.9
+    cli_version: 0.17.0
+    framework: keras
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    start_time: 1725870389
+    t:
+      1:
+      - 2
+      - 3
+      - 5
+      - 35
+      - 53
+      - 55
+      2:
+      - 2
+      - 3
+      - 5
+      - 35
+      - 53
+      - 55
+      3:
+      - 2
+      - 13
+      - 16
+      - 23
+      4: 3.11.9
+      5: 0.17.0
+      8:
+      - 1
+      - 5
+      13: linux-x86_64

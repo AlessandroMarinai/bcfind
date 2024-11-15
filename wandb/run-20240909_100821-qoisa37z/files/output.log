@@ -1,0 +1,30 @@
+{'clip': 'bit', 'clip_value': 15, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 15}
+{'clip': 'bit', 'clip_value': 15, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 15}
+<_ParallelMapDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+[1, None, None, None]
+(1, 80, 120, 120)
+aaa
+<_ShuffleDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+[None, None, None, None]
+(None, 80, 120, 120)
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120, 1), dtype=tf.float32, name=None)>
+cis siamo
+2024-09-09 10:08:25.399312: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1012 MB memory:  -> device: 1, name: NVIDIA RTX A6000, pci bus id: 0000:ca:00.0, compute capability: 8.6
+2024-09-09 10:08:40.986661: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:5: Filling up shuffle buffer (this may take a while): 20 of 137
+2024-09-09 10:08:56.062755: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:5: Filling up shuffle buffer (this may take a while): 128 of 137
+2024-09-09 10:08:57.114331: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:452] Shuffle buffer filled.
+2024-09-09 10:09:42.013026: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 18 of 163
+2024-09-09 10:09:57.737591: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 19 of 163
+2024-09-09 10:10:41.317647: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 49 of 163
+2024-09-09 10:13:24.171164: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 50 of 163
+2024-09-09 10:14:44.857526: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 51 of 163
+2024-09-09 10:15:50.817957: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 52 of 163
+2024-09-09 10:16:41.855859: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 53 of 163
+2024-09-09 10:17:07.272104: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 54 of 163
+2024-09-09 10:17:35.204341: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 55 of 163
+2024-09-09 10:17:57.327996: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 58 of 163
+2024-09-09 10:18:07.445632: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 89 of 163
+2024-09-09 10:18:26.935321: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 147 of 163
+2024-09-09 10:18:37.491357: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 159 of 163

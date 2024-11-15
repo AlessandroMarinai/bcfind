@@ -73,16 +73,16 @@ class CustomCosineDecayRestarts(tf.keras.optimizers.schedules.LearningRateSchedu
             offset=state["offset"]
         )
 
-"""
 
+"""
 import matplotlib.pyplot as plt
 
 # Create an instance of the custom learning rate schedule
 initial_learning_rate = 0.1
 first_decay_steps = 1000
-warmup_steps = 100
+warmup_steps = 1000
 t_mul = 2.0
-m_mul = 1.0
+m_mul = 0.9
 alpha = 0.0
 
 lr_schedule = CustomCosineDecayRestarts(
@@ -95,7 +95,7 @@ lr_schedule = CustomCosineDecayRestarts(
 )
 
 # Simulate training steps
-steps = 5000
+steps = 20000
 learning_rates = []
 
 for step in range(steps):
@@ -103,11 +103,11 @@ for step in range(steps):
     learning_rates.append(lr)
 
 # Plot the learning rate schedule
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(8, 6), dpi=100)
 plt.plot(range(steps), learning_rates)
 plt.title('Custom Cosine Decay with Restarts Learning Rate Schedule')
 plt.xlabel('Training Steps')
 plt.ylabel('Learning Rate')
 plt.grid(True)
-plt.savefig('/home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/scheduler/scheduler_plot.png')
+plt.savefig('/home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/scheduler/scheduler_plot_warmup.png')
 """

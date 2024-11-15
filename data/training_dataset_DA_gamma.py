@@ -94,7 +94,8 @@ class TrainingDataset_DA_gamma(tf.keras.utils.Sequence):
 
             # cache data after time consuming map and make it shuffle every epoch
             data = data.cache().shuffle(len(marker_list), reshuffle_each_iteration=True)
-
+            
+            
             # random crop inputs and targets
             if output_shape is not None:
                 data = data.map(

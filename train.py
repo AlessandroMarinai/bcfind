@@ -382,6 +382,7 @@ class Trainer:
                     use_lmdb=use_lmdb,
                     **conf.preproc,
                 )
+            print(self.unet_train_data)
 
             ####################################
             ############## UNET ################

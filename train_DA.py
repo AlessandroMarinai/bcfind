@@ -24,7 +24,7 @@ from localizers import BlobDoG
 from utils.models import predict
 from utils.data import get_input_tf, get_gt_as_numpy
 from utils.base import evaluate_df
-from callbacksDA import LambdaSchedulerGRL
+#from callbacksDA import LambdaSchedulerGRL
 import warnings
 from data.augmentation import gamma_tf
 from scheduler import CustomCosineDecayRestarts
@@ -46,14 +46,16 @@ class Trainer:
         augmentations,
         augmentations_prob,
         batch_size,
+        preprocess_kwargs,
+        preprocess_kwargs_target,
         val_inputs=None,
         val_targets=None,
         val_inputs_target=None,
         use_lmdb=False,
-        same_dataset=False, #set this to false to run normally
-        **preprocessing_kwargs,
+        same_dataset=True, #set this to false to run normally
+        
     ):
-        #This part is to be changed if wanna test gamma corrected source
+        print("SAME DATASET IS SET TO TRUE BE CAREFUL")
         if same_dataset:
             train_inputs = train_inputs[:80]
             train_targets = train_targets[:80]
@@ -69,7 +71,8 @@ class Trainer:
             augmentations=augmentations,
             augmentations_prob=augmentations_prob,
             use_lmdb_data=use_lmdb,
-            **preprocessing_kwargs,
+            preprocess_kwargs = preprocess_kwargs,
+            preprocess_kwargs_target = preprocess_kwargs_target,
         )
 
         if val_inputs and val_targets:
@@ -83,7 +86,8 @@ class Trainer:
                 augmentations=augmentations,
                 augmentations_prob=augmentations_prob,
                 use_lmdb_data=use_lmdb,
-                **preprocessing_kwargs,
+                preprocess_kwargs = preprocess_kwargs,
+                preprocess_kwargs_target = preprocess_kwargs_target,
             )
         else:
             self.unet_val_data = None
@@ -206,7 +210,9 @@ class Trainer:
             )
 
         #self.unet.build((None, 48, 48, 48, 1)) #define the dimensions
-        self.unet.build((None, 48, 96, 96, 1))
+        #self.unet.build((None, 48, 96, 96, 1))
+        self.unet.build((None, 80, 120, 120, 1))
+
 
     def compile_unet(
         self,
@@ -270,17 +276,14 @@ class Trainer:
                 x, y = source
                 batch_size = x.shape[0]
                 inputs = tf.concat([x, x_target], axis=0)
-                classifier_weight = 0.0 #float(0.01*((epoch/epochs)**2))
+                classifier_weight = 1.0 #float(0.1*(epoch/epochs))
                 with tf.GradientTape() as tape:
                     y_pred, y_domain = self.unet(inputs, training=True)
                     y_pred_source = y_pred[:batch_size, ...]
                     comp_loss = self.comp_loss(y_true=y, y_pred=y_pred_source)
-                    
                     gt_domain = get_gt_domain(batch_size, self.pixel_wise)
                     bce_loss = self.bce(y_pred=y_domain, y_true=gt_domain)*classifier_weight
-                    
-                    loss = bce_loss + comp_loss
-                    
+                    loss = bce_loss + comp_loss  
                 grads = tape.gradient(loss, self.unet.trainable_weights)
                 self.optimizer.apply_gradients(zip(grads, self.unet.trainable_weights))
                 wandb.log({"lr": self.lr_schedule.current_learning})
@@ -317,7 +320,7 @@ class Trainer:
             results["compiled_loss"] = np.mean(comp_losses)
             results["classifier_loss"] = np.mean(bce_losses)
             new_lambda = sigmoid_decay_schedule(epoch=epoch, max_epochs=epochs)
-            self.unet.get_layer('domain_classifier').get_layer('gradient_reversal').set_lambda(new_lambda)
+            self.unet.get_layer('domain_classifier').get_layer('gradient_reversal').set_lambda(0.0)   #new_lambda)
             results["lambda"] = self.unet.get_layer('domain_classifier').get_layer('gradient_reversal').get_lambda()
             results["lr"] = self.lr_schedule.current_learning.numpy()
             results["classifier_weight"] = classifier_weight
@@ -587,6 +590,8 @@ class Trainer:
         
         conf = TrainDAConfiguration(config_file)
 
+        
+
         with open(config_file, 'r') as f:
             data = yaml.load(f, Loader=yaml.BaseLoader)
         wandb.login()
@@ -655,7 +660,8 @@ class Trainer:
                     val_targets=val_marker_files,
                     val_inputs_target=val_tiff_files_target,
                     use_lmdb=use_lmdb,
-                    **conf.preproc,
+                    preprocess_kwargs=conf.preproc,
+                    preprocess_kwargs_target=conf.preproct
                 )
             else:
                 self.make_unet_data_DA(
@@ -668,7 +674,8 @@ class Trainer:
                     augmentations_prob=conf.data_aug.op_probs,
                     batch_size= conf.unet.batch_size,
                     use_lmdb=use_lmdb,
-                    **conf.preproc,
+                    preprocess_kwargs=conf.preproc,
+                    preprocess_kwargs_target=conf.preproct
                 )
 
             ####################################
@@ -778,8 +785,6 @@ class Trainer:
             db_name = f"{conf.source.name}_train_pred_lmdb"
 
 
-        if os.path.exists(f"{conf.exp.basepath}/{db_name}"):
-            shutil.rmtree(path=f"{conf.exp.basepath}/{db_name}")
         self.dog_train_inputs, self.dog_train_targets = self.make_dog_data(
             tiff_files=tiff_files,
             marker_files=marker_files,
@@ -865,8 +870,6 @@ class Trainer:
         ############ UNET PREDICTIONS #############
         ###########################################
         print(f"\nPREPARING TEST DATA")
-        if os.path.exists(f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb"):
-            shutil.rmtree(path=f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb")
         self.dog_test_inputs, self.dog_test_targets = self.make_dog_data(
             tiff_files=test_tiff_files,
             marker_files=test_marker_files,
@@ -923,7 +926,7 @@ class Trainer:
         conf = TrainDAConfiguration(config_file)
 
         if test_on_target:   
-            gamma = 2.1
+            gamma = 2.0
             print("using targets and augmented with gamma:") 
             print(gamma)
             data_conf = conf.target
@@ -980,9 +983,9 @@ class Trainer:
         ###########################################
         ############ UNET PREDICTIONS #############
         ###########################################
+        print("TODO CHANGE ALSO MAKE DOG DATA TO HAVE PREPROC ARGS for TARGET")
+
         print(f"\nPREPARING TEST DATA")
-        if os.path.exists(f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb"):
-            shutil.rmtree(path=f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb")
         self.dog_test_inputs, self.dog_test_targets = self.make_dog_data(
             tiff_files=test_tiff_files,
             marker_files=test_marker_files,
@@ -1064,8 +1067,6 @@ class Trainer:
         ############ UNET PREDICTIONS #############
         ###########################################
         print(f"\nPREPARING TEST DATA")
-        if os.path.exists(f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb"):
-            shutil.rmtree(path=f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb")
         self.dog_test_inputs, self.dog_test_targets = self.make_dog_data(
             tiff_files=test_tiff_files,
             marker_files=test_marker_files,
@@ -1085,8 +1086,6 @@ class Trainer:
         ############ UNET PREDICTIONS #############
         ###########################################
         print(f"\nPREPARING TEST DATA")
-        if os.path.exists(f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb"):
-            shutil.rmtree(path=f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb")
         self.dog_test_inputs_target, self.dog_test_targets_target = self.make_dog_data(
             tiff_files=test_tiff_files,
             marker_files=test_marker_files,
@@ -1107,7 +1106,7 @@ class Trainer:
         num_points = 300
 
 
-        with open("/home/amarinai/DeepLearningThesis/Results/Unet_DA_head_max/results.csv", mode='w', newline='') as file:
+        with open("/home/amarinai/DeepLearningThesis/Results/Unet_FDA_06/results.csv", mode='w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(['min_rad', 'max_rad', 'sigma_ratio', 'overlap',"threshold",
                             'f1_source', 'prec_source', 'rec_source', 'acc_source',
@@ -1194,7 +1193,7 @@ class Trainer:
         conf = TrainDAConfiguration(config_file)
 
         wandb.init(project='my-tf-integration', name=conf.exp.name)
-        gamma = None
+        gamma = 2.0
 
         self.build_unet(
                         n_blocks=conf.unet.n_blocks,
@@ -1223,7 +1222,7 @@ class Trainer:
         print(f"\nPREPARING TEST DATA")
 
         #target domain
-        data_conf = conf.source
+        data_conf = conf.target
 
         test_tiff_files, test_marker_files = get_inputs_target_paths(
             data_conf.test_tif_dir, data_conf.test_gt_dir
@@ -1233,8 +1232,6 @@ class Trainer:
         ############ UNET PREDICTIONS #############
         ###########################################
         print(f"\nPREPARING TEST DATA")
-        if os.path.exists(f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb"):
-            shutil.rmtree(path=f"{conf.exp.basepath}/{data_conf.name}_test_pred_lmdb")
         self.dog_test_inputs_target, self.dog_test_targets_target = self.make_dog_data(
             tiff_files=test_tiff_files,
             marker_files=test_marker_files,
@@ -1323,8 +1320,9 @@ class Trainer:
                     augmentations=conf.data_aug.op_args,
                     augmentations_prob=conf.data_aug.op_probs,
                     batch_size= conf.unet.batch_size,
-                    **conf.preproc,
-                )
+                    preprocessing_kwargs=conf.preproc,
+                    preprocessing_kwargs_target=conf.preproct                
+                    )
 
         for step, data in enumerate(self.unet_train_data):
             source, x_target = data
@@ -1422,9 +1420,9 @@ def main():
         trainer.run(args.config, args.only_dog, args.val_from_test, args.lmdb, args.gpu, args.checkpoint_model)
         #trainer.get_oracle_f1_gamma(args.config, args.val_from_test, args.gpu, args.test_on_target)
     else:
-        trainer.test(args.config, args.val_from_test, args.gpu, args.test_on_target)
+        #trainer.test(args.config, args.val_from_test, args.gpu, args.test_on_target)
         #trainer.test(args.config, args.val_from_test, args.gpu, args.test_on_target, args.slice)
-        #trainer.test_gamma_target(args.config, args.val_from_test, args.gpu, args.test_on_target)
+        trainer.test_gamma_target(args.config, args.val_from_test, args.gpu, args.test_on_target)
         #trainer.get_oracle_f1_gamma(args.config, args.val_from_test, args.gpu, args.test_on_target)
 
 

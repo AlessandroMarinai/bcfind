@@ -1,0 +1,93 @@
+2024-09-09 10:59:55,521 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Current SDK version is 0.17.0
+2024-09-09 10:59:55,521 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Configure stats pid to 3795223
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Loading settings from /home/amarinai/.config/wandb/settings
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Loading settings from /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/settings
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_init.py:_log_setup():520] Logging user logs to /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/run-20240909_105955-qf0wlxwf/logs/debug.log
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_init.py:_log_setup():521] Logging internal logs to /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/run-20240909_105955-qf0wlxwf/logs/debug-internal.log
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_init.py:init():560] calling init triggers
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_init.py:init():567] wandb.init called with sweep_config: {}
+config: {'Source': {'name': 'SST_short', 'basepath': '/home/amarinai/Data/SST', 'shape': ['160', '480', '480'], 'dim_resolution': ['2.', '.65', '.65'], 'cell_radius': ['3', '9', '9']}, 'Target': {'name': 'SST_gamma', 'basepath': '/home/amarinai/Data/CFos', 'shape': ['160', '480', '480'], 'dim_resolution': ['2.', '.65', '.65'], 'cell_radius': ['3', '9', '9']}, 'Experiment': {'name': 'Unet_FDA', 'basepath': '/home/amarinai/DeepLearningThesis/Results'}, 'UNet': {'model': 'unet', 'input_shape': ['80', '120', '120'], 'epochs': '5000', 'batch_size': '10', 'learning_rate': '0.05', 'n_blocks': '4', 'n_filters': '16', 'k_size': ['3', '5', '5'], 'k_stride': ['2', '2', '2'], 'dropout': 'null', 'regularizer': 'null', 'lambda_da': '0.0', 'squeeze_factor': '2', 'moe_n_experts': '5', 'moe_top_k_experts': 'null', 'moe_noise': 'true', 'moe_balance_loss': 'load'}, 'DoG': {'iterations': '100', 'max_match_dist': '10', 'n_cpu': '5'}, 'PreProcessing': {'clip': 'bit', 'clip_value': '15', 'center': 'null', 'center_value': 'null', 'scale': 'bit', 'scale_value': '15'}, 'PreprocessingTarget': {'clip': 'bit', 'clip_value': '15', 'center': 'null', 'center_value': 'null', 'scale': 'bit', 'scale_value': '15'}, 'DataAugmentation': {'augment': 'false', 'gamma': {'param_range': ['0.9', '1.1'], 'p': '0.3'}, 'brightness': {'param_range': ['-0.06', '0.06'], 'p': '0.3'}, 'blur': {'param_range': ['0.', '0.3'], 'p': '0.3'}, 'noise': {'param_range': ['0.', '0.03'], 'p': '0.3'}, 'flip': {'axes': ['-2'], 'p': '0.3'}}}
+2024-09-09 10:59:55,522 INFO    MainThread:3795223 [wandb_init.py:init():610] starting backend
+2024-09-09 10:59:55,523 INFO    MainThread:3795223 [wandb_init.py:init():614] setting up manager
+2024-09-09 10:59:55,524 INFO    MainThread:3795223 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-09-09 10:59:55,525 INFO    MainThread:3795223 [wandb_init.py:init():622] backend started and connected
+2024-09-09 10:59:55,529 INFO    MainThread:3795223 [wandb_run.py:_label_probe_notebook():1328] probe notebook
+2024-09-09 10:59:55,529 INFO    MainThread:3795223 [wandb_run.py:_label_probe_notebook():1338] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2024-09-09 10:59:55,529 INFO    MainThread:3795223 [wandb_init.py:init():711] updated telemetry
+2024-09-09 10:59:55,536 INFO    MainThread:3795223 [wandb_init.py:init():744] communicating run to backend with 90.0 second timeout
+2024-09-09 11:00:11,700 WARNING MainThread:3795223 [wandb_init.py:init():1168] interrupted
+Traceback (most recent call last):
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1164, in init
+    return wi.init()
+           ^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 747, in init
+    result = run_init_handle.wait(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/threading.py", line 629, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/threading.py", line 331, in wait
+    gotit = waiter.acquire(True, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+2024-09-09 11:00:14,202 INFO    MainThread:3795223 [wandb_settings.py:_apply_login():1895] Applying login settings: {}
+2024-09-09 11:00:14,214 INFO    MainThread:3795223 [wandb_settings.py:_apply_login():1895] Applying login settings: {}
+2024-09-09 11:00:14,220 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Current SDK version is 0.17.0
+2024-09-09 11:00:14,220 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Configure stats pid to 3795223
+2024-09-09 11:00:14,220 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Loading settings from /home/amarinai/.config/wandb/settings
+2024-09-09 11:00:14,220 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Loading settings from /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/settings
+2024-09-09 11:00:14,220 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-09-09 11:00:14,220 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2024-09-09 11:00:14,220 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-09-09 11:00:14,220 INFO    MainThread:3795223 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-09-09 11:00:14,221 INFO    MainThread:3795223 [wandb_init.py:_log_setup():520] Logging user logs to /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/run-20240909_110014-qo636hpk/logs/debug.log
+2024-09-09 11:00:14,221 INFO    MainThread:3795223 [wandb_init.py:_log_setup():521] Logging internal logs to /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/run-20240909_110014-qo636hpk/logs/debug-internal.log
+2024-09-09 11:00:14,221 INFO    MainThread:3795223 [wandb_init.py:init():560] calling init triggers
+2024-09-09 11:00:14,221 INFO    MainThread:3795223 [wandb_init.py:init():567] wandb.init called with sweep_config: {}
+config: {'Source': {'name': 'SST_short', 'basepath': '/home/amarinai/Data/SST', 'shape': ['160', '480', '480'], 'dim_resolution': ['2.', '.65', '.65'], 'cell_radius': ['3', '9', '9']}, 'Target': {'name': 'SST_gamma', 'basepath': '/home/amarinai/Data/CFos', 'shape': ['160', '480', '480'], 'dim_resolution': ['2.', '.65', '.65'], 'cell_radius': ['3', '9', '9']}, 'Experiment': {'name': 'Unet_FDA', 'basepath': '/home/amarinai/DeepLearningThesis/Results'}, 'UNet': {'model': 'unet', 'input_shape': ['80', '120', '120'], 'epochs': '5000', 'batch_size': '10', 'learning_rate': '0.05', 'n_blocks': '4', 'n_filters': '16', 'k_size': ['3', '5', '5'], 'k_stride': ['2', '2', '2'], 'dropout': 'null', 'regularizer': 'null', 'lambda_da': '0.0', 'squeeze_factor': '2', 'moe_n_experts': '5', 'moe_top_k_experts': 'null', 'moe_noise': 'true', 'moe_balance_loss': 'load'}, 'DoG': {'iterations': '100', 'max_match_dist': '10', 'n_cpu': '5'}, 'PreProcessing': {'clip': 'bit', 'clip_value': '15', 'center': 'null', 'center_value': 'null', 'scale': 'bit', 'scale_value': '15'}, 'PreprocessingTarget': {'clip': 'bit', 'clip_value': '15', 'center': 'null', 'center_value': 'null', 'scale': 'bit', 'scale_value': '15'}, 'DataAugmentation': {'augment': 'false', 'gamma': {'param_range': ['0.9', '1.1'], 'p': '0.3'}, 'brightness': {'param_range': ['-0.06', '0.06'], 'p': '0.3'}, 'blur': {'param_range': ['0.', '0.3'], 'p': '0.3'}, 'noise': {'param_range': ['0.', '0.03'], 'p': '0.3'}, 'flip': {'axes': ['-2'], 'p': '0.3'}}}
+2024-09-09 11:00:14,221 INFO    MainThread:3795223 [wandb_init.py:init():610] starting backend
+2024-09-09 11:00:14,221 INFO    MainThread:3795223 [wandb_init.py:init():614] setting up manager
+2024-09-09 11:00:14,223 INFO    MainThread:3795223 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-09-09 11:00:14,223 INFO    MainThread:3795223 [wandb_init.py:init():622] backend started and connected
+2024-09-09 11:00:14,227 INFO    MainThread:3795223 [wandb_run.py:_label_probe_notebook():1328] probe notebook
+2024-09-09 11:00:14,227 INFO    MainThread:3795223 [wandb_run.py:_label_probe_notebook():1338] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2024-09-09 11:00:14,227 INFO    MainThread:3795223 [wandb_init.py:init():711] updated telemetry
+2024-09-09 11:00:14,233 INFO    MainThread:3795223 [wandb_init.py:init():744] communicating run to backend with 90.0 second timeout
+2024-09-09 11:00:14,694 WARNING MsgRouterThr:3795223 [router.py:message_loop():77] message_loop has been closed
+2024-09-09 11:01:04,628 WARNING MainThread:3795223 [wandb_init.py:init():1168] interrupted
+Traceback (most recent call last):
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1164, in init
+    return wi.init()
+           ^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 747, in init
+    result = run_init_handle.wait(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/threading.py", line 629, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amarinai/miniconda3/envs/bcfind/lib/python3.11/threading.py", line 331, in wait
+    gotit = waiter.acquire(True, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

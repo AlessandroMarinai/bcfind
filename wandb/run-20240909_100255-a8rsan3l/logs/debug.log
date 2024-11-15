@@ -1,0 +1,58 @@
+2024-09-09 10:02:55,418 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Current SDK version is 0.17.0
+2024-09-09 10:02:55,419 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Configure stats pid to 3743806
+2024-09-09 10:02:55,419 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Loading settings from /home/amarinai/.config/wandb/settings
+2024-09-09 10:02:55,419 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Loading settings from /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/settings
+2024-09-09 10:02:55,419 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-09-09 10:02:55,419 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2024-09-09 10:02:55,419 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-09-09 10:02:55,419 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-09-09 10:02:55,419 INFO    MainThread:3743806 [wandb_init.py:_log_setup():520] Logging user logs to /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/run-20240909_100255-a8rsan3l/logs/debug.log
+2024-09-09 10:02:55,419 INFO    MainThread:3743806 [wandb_init.py:_log_setup():521] Logging internal logs to /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/run-20240909_100255-a8rsan3l/logs/debug-internal.log
+2024-09-09 10:02:55,420 INFO    MainThread:3743806 [wandb_init.py:_jupyter_setup():466] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7f931ed5d090>
+2024-09-09 10:02:55,420 INFO    MainThread:3743806 [wandb_init.py:init():560] calling init triggers
+2024-09-09 10:02:55,420 INFO    MainThread:3743806 [wandb_init.py:init():567] wandb.init called with sweep_config: {}
+config: {'Source': {'name': 'Broca_old', 'basepath': '/home/amarinai/Data/Broca_old_l48_long', 'shape': ['50', '100', '100'], 'dim_resolution': ['3.6', '3.6', '3.6'], 'cell_radius': ['3', '3', '3']}, 'Target_unlabeled': {'name': 'target_unlabeled', 'basepath': '/home/amarinai/Data/l45_unlabeled/I45_slice30_fused.ome.tif'}, 'Target': {'name': 'Broca_new', 'basepath': '/home/amarinai/Data/Broca_I45_95crops', 'shape': ['50', '100', '100'], 'dim_resolution': ['3.6', '3.6', '3.6'], 'cell_radius': ['3', '3', '3']}, 'Losses': {'Classifier': '0.1', 'Compiled': '1'}, 'Experiment': {'name': 'Unet_DA_slice_classifier', 'basepath': '/home/amarinai/DeepLearningThesis/Results'}, 'UNet': {'model': 'res_unet_DA', 'input_shape': ['48', '96', '96'], 'epochs': '2000', 'batch_size': '10', 'learning_rate': '0.05', 'n_blocks': '4', 'n_filters': '16', 'k_size': ['3', '3', '3'], 'k_stride': ['2', '2', '2'], 'dropout': 'null', 'regularizer': 'null', 'lambda_da': '0.0', 'squeeze_factor': '2', 'moe_n_experts': '5', 'moe_top_k_experts': 'null', 'moe_noise': 'true', 'moe_balance_loss': 'load'}, 'DoG': {'iterations': '40', 'max_match_dist': '15', 'n_cpu': '5'}, 'PreProcessing': {'clip': 'bit', 'clip_value': '14', 'center': 'null', 'center_value': 'null', 'scale': 'bit', 'scale_value': '14'}, 'PreprocessingTarget': {'clip': 'bit', 'clip_value': '12', 'center': 'null', 'center_value': 'null', 'scale': 'bit', 'scale_value': '12'}, 'DataAugmentation': {'augment': 'false', 'gamma': {'param_range': ['0.9', '1.2'], 'p': '0.4'}, 'brightness': {'param_range': ['-0.1', '0.1'], 'p': '0.4'}, 'zoom': {'param_range': ['1.0', '1.2'], 'order': '1', 'p': '0.2'}, 'blur': {'param_range': ['0.', '0.5'], 'p': '0.4'}, 'noise': {'param_range': ['0.', '0.03'], 'p': '0.4'}}}
+2024-09-09 10:02:55,421 INFO    MainThread:3743806 [wandb_init.py:init():610] starting backend
+2024-09-09 10:02:55,421 INFO    MainThread:3743806 [wandb_init.py:init():614] setting up manager
+2024-09-09 10:02:55,423 INFO    MainThread:3743806 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-09-09 10:02:55,425 INFO    MainThread:3743806 [wandb_init.py:init():622] backend started and connected
+2024-09-09 10:02:55,432 INFO    MainThread:3743806 [wandb_run.py:_label_probe_notebook():1328] probe notebook
+2024-09-09 10:02:55,433 INFO    MainThread:3743806 [wandb_run.py:_label_probe_notebook():1338] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2024-09-09 10:02:55,433 INFO    MainThread:3743806 [wandb_init.py:init():711] updated telemetry
+2024-09-09 10:02:55,442 INFO    MainThread:3743806 [wandb_init.py:init():744] communicating run to backend with 90.0 second timeout
+2024-09-09 10:02:56,021 INFO    MainThread:3743806 [wandb_run.py:_on_init():2396] communicating current version
+2024-09-09 10:02:56,094 INFO    MainThread:3743806 [wandb_run.py:_on_init():2405] got version response upgrade_message: "wandb version 0.17.9 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-09-09 10:02:56,094 INFO    MainThread:3743806 [wandb_init.py:init():795] starting run threads in backend
+2024-09-09 10:02:58,991 INFO    MainThread:3743806 [wandb_run.py:_console_start():2374] atexit reg
+2024-09-09 10:02:58,991 INFO    MainThread:3743806 [wandb_run.py:_redirect():2229] redirect: wrap_raw
+2024-09-09 10:02:58,991 INFO    MainThread:3743806 [wandb_run.py:_redirect():2294] Wrapping output streams.
+2024-09-09 10:02:58,991 INFO    MainThread:3743806 [wandb_run.py:_redirect():2319] Redirects installed.
+2024-09-09 10:02:58,993 INFO    MainThread:3743806 [wandb_init.py:init():838] run started, returning control to user process
+2024-09-09 10:02:59,261 INFO    MainThread:3743806 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2024-09-09 10:02:59,261 INFO    MainThread:3743806 [wandb_init.py:_pause_backend():431] pausing backend
+2024-09-09 10:03:08,659 INFO    MainThread:3743806 [wandb_init.py:_resume_backend():436] resuming backend
+2024-09-09 10:03:08,689 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Current SDK version is 0.17.0
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Configure stats pid to 3743806
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Loading settings from /home/amarinai/.config/wandb/settings
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Loading settings from /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/settings
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_init.py:_log_setup():520] Logging user logs to /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/run-20240909_100308-zj17te3c/logs/debug.log
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_init.py:_log_setup():521] Logging internal logs to /home/amarinai/DeepLearningThesis/BCFind-v2/bcfind/wandb/run-20240909_100308-zj17te3c/logs/debug-internal.log
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_init.py:init():560] calling init triggers
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_init.py:init():567] wandb.init called with sweep_config: {}
+config: {'Source': {'name': 'Broca_old', 'basepath': '/home/amarinai/Data/Broca_old_l48_long', 'shape': ['50', '100', '100'], 'dim_resolution': ['3.6', '3.6', '3.6'], 'cell_radius': ['3', '3', '3']}, 'Target_unlabeled': {'name': 'target_unlabeled', 'basepath': '/home/amarinai/Data/l45_unlabeled/I45_slice30_fused.ome.tif'}, 'Target': {'name': 'Broca_new', 'basepath': '/home/amarinai/Data/Broca_I45_95crops', 'shape': ['50', '100', '100'], 'dim_resolution': ['3.6', '3.6', '3.6'], 'cell_radius': ['3', '3', '3']}, 'Losses': {'Classifier': '0.1', 'Compiled': '1'}, 'Experiment': {'name': 'Unet_DA_slice_classifier', 'basepath': '/home/amarinai/DeepLearningThesis/Results'}, 'UNet': {'model': 'res_unet_DA', 'input_shape': ['48', '96', '96'], 'epochs': '2000', 'batch_size': '10', 'learning_rate': '0.05', 'n_blocks': '4', 'n_filters': '16', 'k_size': ['3', '3', '3'], 'k_stride': ['2', '2', '2'], 'dropout': 'null', 'regularizer': 'null', 'lambda_da': '0.0', 'squeeze_factor': '2', 'moe_n_experts': '5', 'moe_top_k_experts': 'null', 'moe_noise': 'true', 'moe_balance_loss': 'load'}, 'DoG': {'iterations': '40', 'max_match_dist': '15', 'n_cpu': '5'}, 'PreProcessing': {'clip': 'bit', 'clip_value': '14', 'center': 'null', 'center_value': 'null', 'scale': 'bit', 'scale_value': '14'}, 'PreprocessingTarget': {'clip': 'bit', 'clip_value': '12', 'center': 'null', 'center_value': 'null', 'scale': 'bit', 'scale_value': '12'}, 'DataAugmentation': {'augment': 'false', 'gamma': {'param_range': ['0.9', '1.2'], 'p': '0.4'}, 'brightness': {'param_range': ['-0.1', '0.1'], 'p': '0.4'}, 'zoom': {'param_range': ['1.0', '1.2'], 'order': '1', 'p': '0.2'}, 'blur': {'param_range': ['0.', '0.5'], 'p': '0.4'}, 'noise': {'param_range': ['0.', '0.03'], 'p': '0.4'}}}
+2024-09-09 10:03:08,690 INFO    MainThread:3743806 [wandb_init.py:init():585] re-initializing run, found existing run on stack: a8rsan3l
+2024-09-09 10:03:08,692 INFO    MainThread:3743806 [wandb_run.py:_finish():2103] finishing run florenceuniversity/my-tf-integration/a8rsan3l
+2024-09-09 10:03:08,692 ERROR   MainThread:3743806 [jupyter.py:save_history():437] Run pip install nbformat to save notebook history
+2024-09-09 10:03:08,692 INFO    MainThread:3743806 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2024-09-09 10:03:08,692 INFO    MainThread:3743806 [wandb_init.py:_jupyter_teardown():448] cleaning up jupyter logic
+2024-09-09 10:03:08,692 INFO    MainThread:3743806 [wandb_run.py:_atexit_cleanup():2343] got exitcode: 0
+2024-09-09 10:03:08,693 INFO    MainThread:3743806 [wandb_run.py:_restore():2326] restore
+2024-09-09 10:03:08,693 INFO    MainThread:3743806 [wandb_run.py:_restore():2332] restore done
+2024-09-09 10:03:13,512 INFO    MainThread:3743806 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-09-09 10:03:13,512 INFO    MainThread:3743806 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-09-09 10:03:13,522 INFO    MainThread:3743806 [wandb_run.py:_footer_sync_info():3953] logging synced files

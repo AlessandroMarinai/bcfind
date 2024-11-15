@@ -21,8 +21,6 @@ def random_crop(x, target_shape):
 @tf.function(experimental_relax_shapes=True)
 def random_crop_tf(input, target_shape=(50, 100, 100)):
     output = tf.numpy_function(random_crop, [input, target_shape], tf.float32)
-
-    #TODO here the problem is that it is no more made of 2ù
     
     input_shape = input.get_shape().as_list()
     print(input_shape)

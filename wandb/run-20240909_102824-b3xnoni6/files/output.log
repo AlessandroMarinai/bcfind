@@ -1,0 +1,10 @@
+{'clip': 'bit', 'clip_value': 15, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 15}
+{'clip': 'bit', 'clip_value': 15, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 15}
+<_ParallelMapDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+aaa
+<_ShuffleDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120, 1), dtype=tf.float32, name=None)>
+cis siamo
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.login() after wandb.init() has no effect.

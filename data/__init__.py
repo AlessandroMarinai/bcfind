@@ -2,3 +2,5 @@ from .training_dataset import TrainingDataset
 from .training_dataset_DA import TrainingDataset_DA
 from .training_dataset_DA_gamma import TrainingDataset_DA_gamma
 from .training_dataset_DA_slice import TrainingDataset_DA_slice
+from .training_dataset_FDA import TrainingDataset_FDA
+from .training_dataset_DA_FDA import TrainingDataset_DA_FDA

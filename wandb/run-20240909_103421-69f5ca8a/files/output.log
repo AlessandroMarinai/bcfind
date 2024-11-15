@@ -1,0 +1,15 @@
+{'clip': 'bit', 'clip_value': 15, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 15}
+{'clip': 'bit', 'clip_value': 15, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 15}
+<_ParallelMapDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+[1, None, None, None]
+(1, 80, 120, 120)
+aaa
+<_ShuffleDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+[None, None, None, None]
+(None, 80, 120, 120)
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120, 1), dtype=tf.float32, name=None)>
+cis siamo
+2024-09-09 10:34:24.538548: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1012 MB memory:  -> device: 1, name: NVIDIA RTX A6000, pci bus id: 0000:ca:00.0, compute capability: 8.6
+2024-09-09 10:34:43.308627: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:422] ShuffleDatasetV3:10: Filling up shuffle buffer (this may take a while): 33 of 163

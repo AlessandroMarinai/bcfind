@@ -135,6 +135,7 @@ class TrainDAConfiguration:
             "Experiment": "exp",
             "DataAugmentation": "data_aug",
             "PreProcessing": "preproc",
+            "PreprocessingTarget": "preproct",
             "UNet": "unet",
             "DoG": "dog",
             "Target_unlabeled": "target_unlabeled",

@@ -1,0 +1,185 @@
+{'clip': 'bit', 'clip_value': 15, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 15}
+{'clip': 'bit', 'clip_value': 15, 'center': None, 'center_value': None, 'scale': 'bit', 'scale_value': 15}
+<_ParallelMapDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+[1, None, None, None]
+(1, 80, 120, 120)
+aaa
+<_ShuffleDataset element_spec=TensorSpec(shape=(2, None, None, None), dtype=tf.float32, name=None)>
+[None, None, None, None]
+(None, 80, 120, 120)
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120), dtype=tf.float32, name=None)>
+<_ParallelMapDataset element_spec=TensorSpec(shape=(None, 80, 120, 120, 1), dtype=tf.float32, name=None)>
+cis siamo
+2024-09-09 10:53:23.917070: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1012 MB memory:  -> device: 1, name: NVIDIA RTX A6000, pci bus id: 0000:ca:00.0, compute capability: 8.6
+FT28_front_0294_10728_15792.tiff
+FT95_back_2468_16017_03844.tiff
+sub_0480_07200_19680__0187_0050_06406.tif
+FT83_front_2021_15761_11798.tiff
+sub_1280_12960_16320__0861_0179_13931.tif
+2024-09-09 10:56:54.565710: W external/local_tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_0_bfc) ran out of memory trying to allocate 281.25MiB (rounded to 294912000)requested by op Cast
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation.
+Current allocation summary follows.
+Current allocation summary follows.
+2024-09-09 10:56:54.565778: I external/local_tsl/tsl/framework/bfc_allocator.cc:1039] BFCAllocator dump for GPU_0_bfc
+2024-09-09 10:56:54.565799: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (256): 	Total Chunks: 6, Chunks in use: 6. 1.5KiB allocated for chunks. 1.5KiB in use in bin. 41B client-requested in use in bin.
+2024-09-09 10:56:54.565804: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (512): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565808: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (1024): 	Total Chunks: 1, Chunks in use: 1. 1.2KiB allocated for chunks. 1.2KiB in use in bin. 1.0KiB client-requested in use in bin.
+2024-09-09 10:56:54.565812: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (2048): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565816: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (4096): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565819: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (8192): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565823: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565826: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565830: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565833: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565836: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565840: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (524288): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565844: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (1048576): 	Total Chunks: 1, Chunks in use: 0. 2.00MiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565847: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565850: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (4194304): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565854: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (8388608): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565857: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565861: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565864: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565871: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (134217728): 	Total Chunks: 2, Chunks in use: 0. 447.56MiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:56:54.565875: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (268435456): 	Total Chunks: 2, Chunks in use: 2. 562.50MiB allocated for chunks. 562.50MiB in use in bin. 562.50MiB client-requested in use in bin.
+2024-09-09 10:56:54.565880: I external/local_tsl/tsl/framework/bfc_allocator.cc:1062] Bin for 281.25MiB was 256.00MiB, Chunk State:
+2024-09-09 10:56:54.565883: I external/local_tsl/tsl/framework/bfc_allocator.cc:1075] Next region of size 522256384
+2024-09-09 10:56:54.565888: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f41e4000000 of size 294912000 next 11
+2024-09-09 10:56:54.565892: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] Free  at 7f41f5940000 of size 227344384 next 18446744073709551615
+2024-09-09 10:56:54.565896: I external/local_tsl/tsl/framework/bfc_allocator.cc:1075] Next region of size 536870912
+2024-09-09 10:56:54.565898: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f4204000000 of size 294912000 next 9
+2024-09-09 10:56:54.565902: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] Free  at 7f4215940000 of size 241958912 next 18446744073709551615
+2024-09-09 10:56:54.565904: I external/local_tsl/tsl/framework/bfc_allocator.cc:1075] Next region of size 2097152
+2024-09-09 10:56:54.565907: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600000 of size 1280 next 1
+2024-09-09 10:56:54.565911: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600500 of size 256 next 2
+2024-09-09 10:56:54.565914: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600600 of size 256 next 3
+2024-09-09 10:56:54.565917: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600700 of size 256 next 4
+2024-09-09 10:56:54.565920: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600800 of size 256 next 5
+2024-09-09 10:56:54.565923: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600900 of size 256 next 6
+2024-09-09 10:56:54.565926: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600a00 of size 256 next 7
+2024-09-09 10:56:54.565928: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] Free  at 7f444a600b00 of size 2094336 next 18446744073709551615
+2024-09-09 10:56:54.565931: I external/local_tsl/tsl/framework/bfc_allocator.cc:1100]      Summary of in-use Chunks by size:
+2024-09-09 10:56:54.565935: I external/local_tsl/tsl/framework/bfc_allocator.cc:1103] 6 Chunks of size 256 totalling 1.5KiB
+2024-09-09 10:56:54.565938: I external/local_tsl/tsl/framework/bfc_allocator.cc:1103] 1 Chunks of size 1280 totalling 1.2KiB
+2024-09-09 10:56:54.565941: I external/local_tsl/tsl/framework/bfc_allocator.cc:1103] 2 Chunks of size 294912000 totalling 562.50MiB
+2024-09-09 10:56:54.565944: I external/local_tsl/tsl/framework/bfc_allocator.cc:1107] Sum Total of in-use chunks: 562.50MiB
+2024-09-09 10:56:54.565948: I external/local_tsl/tsl/framework/bfc_allocator.cc:1109] Total bytes in pool: 1061224448 memory_limit_: 1061224448 available bytes: 0 curr_region_allocation_bytes_: 1073741824
+2024-09-09 10:56:54.565954: I external/local_tsl/tsl/framework/bfc_allocator.cc:1114] Stats:
+Limit:                      1061224448
+InUse:                       589826816
+MaxInUse:                    589827072
+NumAllocs:                          12
+MaxAllocSize:                294912000
+Reserved:                            0
+PeakReserved:                        0
+LargestFreeBlock:                    0
+2024-09-09 10:56:54.565959: W external/local_tsl/tsl/framework/bfc_allocator.cc:497] ****************************_____________________*****************************_____________________*
+2024-09-09 10:56:54.565981: W tensorflow/core/framework/op_kernel.cc:1827] RESOURCE_EXHAUSTED: failed to allocate memory
+FT83_back_1391_14586_09613.tiff
+sub_0000_03360_21600__0122_0000_04273.tif
+2024-09-09 10:57:55.713361: W external/local_tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_0_bfc) ran out of memory trying to allocate 281.25MiB (rounded to 294912000)requested by op _EagerConst
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation.
+Current allocation summary follows.
+Current allocation summary follows.
+2024-09-09 10:57:55.713429: I external/local_tsl/tsl/framework/bfc_allocator.cc:1039] BFCAllocator dump for GPU_0_bfc
+2024-09-09 10:57:55.713454: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (256): 	Total Chunks: 6, Chunks in use: 6. 1.5KiB allocated for chunks. 1.5KiB in use in bin. 41B client-requested in use in bin.
+2024-09-09 10:57:55.713471: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (512): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713482: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (1024): 	Total Chunks: 1, Chunks in use: 1. 1.2KiB allocated for chunks. 1.2KiB in use in bin. 1.0KiB client-requested in use in bin.
+2024-09-09 10:57:55.713485: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (2048): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713488: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (4096): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713492: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (8192): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713495: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713498: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713502: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713505: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713508: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713511: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (524288): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713515: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (1048576): 	Total Chunks: 1, Chunks in use: 0. 2.00MiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713518: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713521: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (4194304): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713525: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (8388608): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713528: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713535: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713538: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713542: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (134217728): 	Total Chunks: 2, Chunks in use: 0. 447.56MiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:57:55.713546: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (268435456): 	Total Chunks: 2, Chunks in use: 2. 562.50MiB allocated for chunks. 562.50MiB in use in bin. 562.50MiB client-requested in use in bin.
+2024-09-09 10:57:55.713550: I external/local_tsl/tsl/framework/bfc_allocator.cc:1062] Bin for 281.25MiB was 256.00MiB, Chunk State:
+2024-09-09 10:57:55.713553: I external/local_tsl/tsl/framework/bfc_allocator.cc:1075] Next region of size 522256384
+2024-09-09 10:57:55.713558: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f41e4000000 of size 294912000 next 11
+2024-09-09 10:57:55.713561: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] Free  at 7f41f5940000 of size 227344384 next 18446744073709551615
+2024-09-09 10:57:55.713564: I external/local_tsl/tsl/framework/bfc_allocator.cc:1075] Next region of size 536870912
+2024-09-09 10:57:55.713567: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f4204000000 of size 294912000 next 9
+2024-09-09 10:57:55.713570: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] Free  at 7f4215940000 of size 241958912 next 18446744073709551615
+2024-09-09 10:57:55.713572: I external/local_tsl/tsl/framework/bfc_allocator.cc:1075] Next region of size 2097152
+2024-09-09 10:57:55.713575: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600000 of size 1280 next 1
+2024-09-09 10:57:55.713577: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600500 of size 256 next 2
+2024-09-09 10:57:55.713580: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600600 of size 256 next 3
+2024-09-09 10:57:55.713582: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600700 of size 256 next 4
+2024-09-09 10:57:55.713585: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600800 of size 256 next 5
+2024-09-09 10:57:55.713587: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600900 of size 256 next 6
+2024-09-09 10:57:55.713589: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600a00 of size 256 next 7
+2024-09-09 10:57:55.713592: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] Free  at 7f444a600b00 of size 2094336 next 18446744073709551615
+2024-09-09 10:57:55.713595: I external/local_tsl/tsl/framework/bfc_allocator.cc:1100]      Summary of in-use Chunks by size:
+2024-09-09 10:57:55.713598: I external/local_tsl/tsl/framework/bfc_allocator.cc:1103] 6 Chunks of size 256 totalling 1.5KiB
+2024-09-09 10:57:55.713601: I external/local_tsl/tsl/framework/bfc_allocator.cc:1103] 1 Chunks of size 1280 totalling 1.2KiB
+2024-09-09 10:57:55.713604: I external/local_tsl/tsl/framework/bfc_allocator.cc:1103] 2 Chunks of size 294912000 totalling 562.50MiB
+2024-09-09 10:57:55.713607: I external/local_tsl/tsl/framework/bfc_allocator.cc:1107] Sum Total of in-use chunks: 562.50MiB
+2024-09-09 10:57:55.713611: I external/local_tsl/tsl/framework/bfc_allocator.cc:1109] Total bytes in pool: 1061224448 memory_limit_: 1061224448 available bytes: 0 curr_region_allocation_bytes_: 1073741824
+2024-09-09 10:57:55.713617: I external/local_tsl/tsl/framework/bfc_allocator.cc:1114] Stats:
+Limit:                      1061224448
+InUse:                       589826816
+MaxInUse:                    589827072
+NumAllocs:                          12
+MaxAllocSize:                294912000
+Reserved:                            0
+PeakReserved:                        0
+LargestFreeBlock:                    0
+2024-09-09 10:57:55.713622: W external/local_tsl/tsl/framework/bfc_allocator.cc:497] ****************************_____________________*****************************_____________________*
+FT66_front_0650_12831_13965.tiff
+sub_1120_05760_03360__0263_0046_04224.tif
+2024-09-09 10:58:31.687596: W external/local_tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_0_bfc) ran out of memory trying to allocate 281.25MiB (rounded to 294912000)requested by op _EagerConst
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation.
+Current allocation summary follows.
+Current allocation summary follows.
+2024-09-09 10:58:31.687651: I external/local_tsl/tsl/framework/bfc_allocator.cc:1039] BFCAllocator dump for GPU_0_bfc
+2024-09-09 10:58:31.687658: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (256): 	Total Chunks: 6, Chunks in use: 6. 1.5KiB allocated for chunks. 1.5KiB in use in bin. 41B client-requested in use in bin.
+2024-09-09 10:58:31.687662: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (512): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687667: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (1024): 	Total Chunks: 1, Chunks in use: 1. 1.2KiB allocated for chunks. 1.2KiB in use in bin. 1.0KiB client-requested in use in bin.
+2024-09-09 10:58:31.687670: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (2048): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687674: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (4096): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687677: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (8192): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687680: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687683: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687686: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687690: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687693: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687696: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (524288): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687699: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (1048576): 	Total Chunks: 1, Chunks in use: 0. 2.00MiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687703: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687706: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (4194304): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687709: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (8388608): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687712: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687717: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687721: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687724: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (134217728): 	Total Chunks: 2, Chunks in use: 0. 447.56MiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2024-09-09 10:58:31.687728: I external/local_tsl/tsl/framework/bfc_allocator.cc:1046] Bin (268435456): 	Total Chunks: 2, Chunks in use: 2. 562.50MiB allocated for chunks. 562.50MiB in use in bin. 562.50MiB client-requested in use in bin.
+2024-09-09 10:58:31.687733: I external/local_tsl/tsl/framework/bfc_allocator.cc:1062] Bin for 281.25MiB was 256.00MiB, Chunk State:
+2024-09-09 10:58:31.687736: I external/local_tsl/tsl/framework/bfc_allocator.cc:1075] Next region of size 522256384
+2024-09-09 10:58:31.687740: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f41e4000000 of size 294912000 next 11
+2024-09-09 10:58:31.687744: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] Free  at 7f41f5940000 of size 227344384 next 18446744073709551615
+2024-09-09 10:58:31.687747: I external/local_tsl/tsl/framework/bfc_allocator.cc:1075] Next region of size 536870912
+2024-09-09 10:58:31.687749: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f4204000000 of size 294912000 next 9
+2024-09-09 10:58:31.687752: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] Free  at 7f4215940000 of size 241958912 next 18446744073709551615
+2024-09-09 10:58:31.687755: I external/local_tsl/tsl/framework/bfc_allocator.cc:1075] Next region of size 2097152
+2024-09-09 10:58:31.687757: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600000 of size 1280 next 1
+2024-09-09 10:58:31.687771: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600500 of size 256 next 2
+2024-09-09 10:58:31.687775: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600600 of size 256 next 3
+2024-09-09 10:58:31.687777: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600700 of size 256 next 4
+2024-09-09 10:58:31.687780: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600800 of size 256 next 5
+2024-09-09 10:58:31.687783: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600900 of size 256 next 6
+2024-09-09 10:58:31.687786: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] InUse at 7f444a600a00 of size 256 next 7
+2024-09-09 10:58:31.687789: I external/local_tsl/tsl/framework/bfc_allocator.cc:1095] Free  at 7f444a600b00 of size 2094336 next 18446744073709551615
+2024-09-09 10:58:31.687792: I external/local_tsl/tsl/framework/bfc_allocator.cc:1100]      Summary of in-use Chunks by size:
+2024-09-09 10:58:31.687795: I external/local_tsl/tsl/framework/bfc_allocator.cc:1103] 6 Chunks of size 256 totalling 1.5KiB
+2024-09-09 10:58:31.687798: I external/local_tsl/tsl/framework/bfc_allocator.cc:1103] 1 Chunks of size 1280 totalling 1.2KiB

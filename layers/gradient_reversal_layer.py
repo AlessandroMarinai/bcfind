@@ -62,17 +62,17 @@ class GradientReversalLayer(tf.keras.layers.Layer):
 
     def __init__(self, lambda_da=0.01, **kwargs):
         super(GradientReversalLayer, self).__init__(**kwargs)
-        self.λ = lambda_da
+        self.lam = lambda_da
 
     @staticmethod
     @tf.custom_gradient
-    def reverse_gradient(x, λ):
+    def reverse_gradient(x, lam):
         # @tf.custom_gradient suggested by Hoa's comment at
         # https://stackoverflow.com/questions/60234725/how-to-use-gradient-override-map-with-tf-gradienttape-in-tf2-0
-        return tf.identity(x), lambda dy: (-dy * λ, None)
+        return tf.identity(x), lambda dy: (-dy * lam, None)
 
     def call(self, x):
-        return self.reverse_gradient(x, self.λ)
+        return self.reverse_gradient(x, self.lam)
 
     def compute_mask(self, inputs, mask=None):
         return mask
@@ -81,10 +81,10 @@ class GradientReversalLayer(tf.keras.layers.Layer):
         return input_shape
 
     def get_config(self):
-        return super(GradientReversalLayer, self).get_config() | {'λ': self.λ}
+        return super(GradientReversalLayer, self).get_config() | {'λ': self.lam}
     
     def set_lambda(self, new_lambda):
-        self.λ = new_lambda
+        self.lam = new_lambda
 
     def get_lambda(self):
-        return self.λ
+        return self.lam
