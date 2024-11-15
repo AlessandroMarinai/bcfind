@@ -1,0 +1,15 @@
+cupy-cuda12x[all]
+#numba
+colorama
+lmdb
+matplotlib
+networkx
+hyperopt
+joblib
+pandas
+SimpleITK
+scikit-image
+scikit-learn
+scipy
+#tensorflow>=2.9,<=2.11
+# zetastitcher
